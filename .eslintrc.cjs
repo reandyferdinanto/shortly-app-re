@@ -37,7 +37,9 @@ module.exports = {
     'no-param-reassign': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-uses-react': 'off',
+    'default-param-last': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'default-case': 'off',
     'react/function-component-definition': [
       2,
       {

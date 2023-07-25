@@ -4,13 +4,13 @@ import { injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import { selectLocale } from '@containers/Language/selectors';
+import { selectLocale, selectTheme } from '@containers/App/selectors';
 import { useUpdateSize } from '@utils/hookHelper';
 
 import Navbar from '@components/Navbar';
 import classes from './style.module.scss';
 
-const MainLayout = ({ children, locale, intl: { formatMessage } }) => {
+const MainLayout = ({ children, locale, theme, intl: { formatMessage } }) => {
   const navRef = useRef();
   const [navbarHeight, setNavbarHeight] = useState('0px');
 
@@ -20,7 +20,7 @@ const MainLayout = ({ children, locale, intl: { formatMessage } }) => {
 
   return (
     <div className={classes.layoutWrapper} style={{ '--height': navbarHeight }}>
-      <Navbar title={formatMessage({ id: 'app_title_header' })} locale={locale} contentRef={navRef} />
+      <Navbar title={formatMessage({ id: 'app_title_header' })} locale={locale} theme={theme} contentRef={navRef} />
       {children}
     </div>
   );
@@ -28,11 +28,13 @@ const MainLayout = ({ children, locale, intl: { formatMessage } }) => {
 
 const mapStateToProps = createStructuredSelector({
   locale: selectLocale,
+  theme: selectTheme,
 });
 
 MainLayout.propTypes = {
   children: PropTypes.element.isRequired,
   locale: PropTypes.string,
+  theme: PropTypes.string,
   intl: PropTypes.object,
 };
 

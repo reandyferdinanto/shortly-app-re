@@ -1,8 +1,6 @@
 @import './base.scss';
 :root {
   font-family: Poppins, Arial, sans-serif;
-  background: $color-light-blue;
-  color: $color-dark-blue;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 
@@ -17,6 +15,8 @@
   @include apply-at-lg-size {
     font-size: 125%;
   }
+
+  @include light-theme;
 }
 
 body {

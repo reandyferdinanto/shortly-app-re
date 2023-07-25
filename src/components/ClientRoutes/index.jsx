@@ -1,6 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import routes from '@routes/index';
 
+import AppLayout from '@layouts/AppLayout';
+
 const ClientRoutes = () => {
   const getRoutes = () => {
     const routeList = [];
@@ -16,7 +18,11 @@ const ClientRoutes = () => {
         );
       }
 
-      return <Component />;
+      return (
+        <AppLayout>
+          <Component />
+        </AppLayout>
+      );
     };
 
     routes.forEach((route) => {

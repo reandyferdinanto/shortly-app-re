@@ -1,10 +1,9 @@
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-
 import { BrowserRouter } from 'react-router-dom';
-import ClientRoutes from '@components/ClientRoutes';
 
+import App from '@containers/App';
 import Language from '@containers/Language';
 
 import store, { persistor } from './configureStore';
@@ -16,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <PersistGate persistor={persistor}>
       <Language>
         <BrowserRouter>
-          <ClientRoutes />
+          <App />
         </BrowserRouter>
       </Language>
     </PersistGate>

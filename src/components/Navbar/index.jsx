@@ -8,12 +8,14 @@ import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import NightsStayIcon from '@mui/icons-material/NightsStay';
 
-import { setLocale } from '@containers/Language/actions';
+import { setLocale, setTheme } from '@containers/App/actions';
 
 import classes from './style.module.scss';
 
-const Navbar = ({ title, locale, contentRef }) => {
+const Navbar = ({ title, locale, contentRef, theme }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [menuPosition, setMenuPosition] = useState(null);
@@ -25,6 +27,10 @@ const Navbar = ({ title, locale, contentRef }) => {
 
   const handleClose = () => {
     setMenuPosition(null);
+  };
+
+  const handleTheme = () => {
+    dispatch(setTheme(theme === 'light' ? 'dark' : 'light'));
   };
 
   const onSelectLang = (lang) => {
@@ -45,10 +51,15 @@ const Navbar = ({ title, locale, contentRef }) => {
           <img src="/src/static/images/vite.svg" alt="logo" className={classes.logo} />
           <div className={classes.title}>{title}</div>
         </div>
-        <div className={classes.toggle} onClick={handleClick}>
-          <Avatar className={classes.avatar} src={`/src/static/images/flags/${locale}.png`} />
-          <div className={classes.lang}>{locale}</div>
-          <ExpandMoreIcon />
+        <div className={classes.toolbar}>
+          <div className={classes.theme} onClick={handleTheme}>
+            {theme === 'light' ? <NightsStayIcon /> : <LightModeIcon />}
+          </div>
+          <div className={classes.toggle} onClick={handleClick}>
+            <Avatar className={classes.avatar} src={`/src/static/images/flags/${locale}.png`} />
+            <div className={classes.lang}>{locale}</div>
+            <ExpandMoreIcon />
+          </div>
         </div>
         <Menu open={open} anchorEl={menuPosition} onClose={handleClose}>
           <MenuItem onClick={() => onSelectLang('id')} selected={locale === 'id'}>
@@ -76,6 +87,7 @@ const Navbar = ({ title, locale, contentRef }) => {
 Navbar.propTypes = {
   title: PropTypes.string,
   locale: PropTypes.string.isRequired,
+  theme: PropTypes.string,
   contentRef: PropTypes.object,
 };
 

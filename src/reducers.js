@@ -1,16 +1,16 @@
 import { combineReducers } from 'redux';
 
-import appReducer from '@containers/App/reducer';
-import languageReducer, { storedKey as storedLangState } from '@containers/Language/reducer';
+import appReducer, { storedKey as storedAppState } from '@containers/App/reducer';
+import languageReducer from '@containers/Language/reducer';
 
 import { mapWithPersistor } from './persistence';
 
 const storedReducers = {
-  language: { reducer: languageReducer, whitelist: storedLangState },
+  app: { reducer: appReducer, whitelist: storedAppState },
 };
 
 const temporaryReducers = {
-  app: appReducer,
+  language: languageReducer,
 };
 
 const createReducer = () => {

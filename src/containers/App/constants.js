@@ -1,3 +1,2 @@
-export const SET_GREETINGS = 'APP/GREETINGS';
-export const GET_COUNTRY_LIST = 'APP/GET_COUNTRY_LIST';
-export const SET_COUNTRY_LIST = 'APP/SET_COUNTRY_LIST';
+export const SET_LOCAL = 'Language/SET_LOCAL';
+export const SET_THEME = 'Language/SET_THEME';

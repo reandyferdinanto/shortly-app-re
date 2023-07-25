@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { IntlProvider } from 'react-intl';
 
-import { selectLocale, selectMessages } from './selectors';
+import { selectLocale } from '@containers/App/selectors';
+import { selectMessages } from '@containers/Language/selectors';
 
 const Language = ({ children, locale, messages }) => (
   <IntlProvider key={locale} locale={locale} messages={messages[locale]}>
