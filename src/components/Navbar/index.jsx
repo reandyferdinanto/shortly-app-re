@@ -13,6 +13,10 @@ import NightsStayIcon from '@mui/icons-material/NightsStay';
 
 import { setLocale, setTheme } from '@containers/App/actions';
 
+import Logo from '@static/images/vite.svg';
+import FlagId from '@static/images/flags/id.png';
+import FlagEn from '@static/images/flags/en.png';
+
 import classes from './style.module.scss';
 
 const Navbar = ({ title, locale, contentRef, theme }) => {
@@ -48,7 +52,7 @@ const Navbar = ({ title, locale, contentRef, theme }) => {
     <AppBar className={classes.headerWrapper} ref={contentRef}>
       <div className={classes.contentWrapper}>
         <div className={classes.logoImage} onClick={goHome}>
-          <img src="/src/static/images/vite.svg" alt="logo" className={classes.logo} />
+          <img src={Logo} alt="logo" className={classes.logo} />
           <div className={classes.title}>{title}</div>
         </div>
         <div className={classes.toolbar}>
@@ -56,7 +60,7 @@ const Navbar = ({ title, locale, contentRef, theme }) => {
             {theme === 'light' ? <NightsStayIcon /> : <LightModeIcon />}
           </div>
           <div className={classes.toggle} onClick={handleClick}>
-            <Avatar className={classes.avatar} src={`/src/static/images/flags/${locale}.png`} />
+            <Avatar className={classes.avatar} src={locale === 'id' ? FlagId : FlagEn} />
             <div className={classes.lang}>{locale}</div>
             <ExpandMoreIcon />
           </div>
@@ -64,7 +68,7 @@ const Navbar = ({ title, locale, contentRef, theme }) => {
         <Menu open={open} anchorEl={menuPosition} onClose={handleClose}>
           <MenuItem onClick={() => onSelectLang('id')} selected={locale === 'id'}>
             <div className={classes.menu}>
-              <Avatar className={classes.menuAvatar} src="/src/static/images/flags/id.png" />
+              <Avatar className={classes.menuAvatar} src={FlagId} />
               <div className={classes.menuLang}>
                 <FormattedMessage id="app_lang_id" />
               </div>
@@ -72,7 +76,7 @@ const Navbar = ({ title, locale, contentRef, theme }) => {
           </MenuItem>
           <MenuItem onClick={() => onSelectLang('en')} selected={locale === 'en'}>
             <div className={classes.menu}>
-              <Avatar className={classes.menuAvatar} src="/src/static/images/flags/en.png" />
+              <Avatar className={classes.menuAvatar} src={FlagEn} />
               <div className={classes.menuLang}>
                 <FormattedMessage id="app_lang_en" />
               </div>
