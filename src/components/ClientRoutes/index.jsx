@@ -2,27 +2,29 @@ import { Route, Routes } from 'react-router-dom';
 import routes from '@routes/index';
 
 import AppLayout from '@layouts/AppLayout';
+import Client from '@containers/Client';
 
 const ClientRoutes = () => {
   const getRoutes = () => {
     const routeList = [];
 
     const renderElement = (route) => {
-      const { layout: Layout, component: Component } = route;
+      const { layout: Layout, component: Component, protected: Protected } = route;
+      let element = (
+        <AppLayout>
+          <Component />
+        </AppLayout>
+      );
 
       if (typeof Layout !== 'undefined') {
-        return (
+        element = (
           <Layout>
             <Component />
           </Layout>
         );
       }
 
-      return (
-        <AppLayout>
-          <Component />
-        </AppLayout>
-      );
+      return Protected ? <Client>{element}</Client> : element;
     };
 
     routes.forEach((route) => {
