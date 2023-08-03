@@ -1,13 +1,24 @@
 import { render } from '@testing-library/react';
 
 import Loader from '@components/Loader';
+import classes from '@components/Loader/style.module.scss';
 
-it('should match with snapshot', () => {
-  const mockProps = {
-    isLoading: true,
-  };
+describe('Component Loader', () => {
+  test('renders loader when isLoading is true', () => {
+    const { getByTestId } = render(<Loader isLoading />);
+    const loaderComponent = getByTestId('Loading');
+    expect(loaderComponent).toHaveClass(classes.showLoader);
+  });
 
-  const loader = render(<Loader {...mockProps} />);
+  test('does not render loader when isLoading is false', () => {
+    const { getByTestId } = render(<Loader isLoading={false} />);
 
-  expect(loader).toMatchSnapshot();
+    const loaderComponent = getByTestId('Loading');
+    expect(loaderComponent).not.toHaveClass(classes.showLoader);
+  });
+
+  test('Should match with snapshot', () => {
+    const loader = render(<Loader isLoading />);
+    expect(loader).toMatchSnapshot();
+  });
 });
