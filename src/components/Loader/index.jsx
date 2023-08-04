@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import logo from '@static/images/react.svg';
 
 import classes from './style.module.scss';
 
@@ -12,7 +11,7 @@ const Loader = ({ isLoading }) => (
       [classes.showLoader]: isLoading || false,
     })}
   >
-    <img src={logo} alt="Loading" />
+    <img src="/src/static/images/react.svg" alt="Loading" />
   </div>
 );
 
