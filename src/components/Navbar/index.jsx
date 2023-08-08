@@ -48,7 +48,7 @@ const Navbar = ({ title, locale, contentRef, theme }) => {
     <AppBar className={classes.headerWrapper} ref={contentRef} data-testid="navbar">
       <div className={classes.contentWrapper}>
         <div className={classes.logoImage} onClick={goHome}>
-          <img src="/src/static/images/vite.svg" alt="logo" className={classes.logo} />
+          {/* <img src="/src/static/images/vite.svg" alt="logo" className={classes.logo} /> */}
           <div className={classes.title}>{title}</div>
         </div>
         <div className={classes.toolbar}>

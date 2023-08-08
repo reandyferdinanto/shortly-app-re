@@ -1,11 +1,13 @@
 @mixin light-theme {
   --color-bg: #fff;
-  --color-bg-2: #e8eef1;
-  --color-text: #001a41;
+  --color-bg-2: hsl(0, 0%, 75%);
+  --color-text: hsl(260, 8%, 14%);
+  --color-nav-s1: hsl(0, 0%, 75%);
 }
 
 @mixin dark-theme {
   --color-bg: #4f4557;
   --color-bg-2: #393646;
   --color-text: #f4eee0;
+  --color-nav-s1: #393646;
 }

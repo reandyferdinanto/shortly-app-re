@@ -1,14 +1,14 @@
 @import '@styles/base';
 
 .headerWrapper {
-  background-color: var(--color-bg) !important;
+  background-color: var(--color-nav-s1) !important;
   box-shadow: 0 0.25rem 0.75rem rgba(25, 49, 83, 0.2) !important;
 
   .contentWrapper {
     @include directionX;
 
     color: var(--color-text);
-    padding: 1rem;
+    padding: 1rem 7rem;
     align-items: center;
     justify-content: space-between;
     font-size: 1rem;
@@ -18,12 +18,13 @@
       cursor: pointer;
       align-items: center;
 
-      .logo {
-        width: 1.5rem;
-        height: 1.5rem;
-        margin-right: 0.5rem;
-      }
+      // .logo {
+      //   width: 1.5rem;
+      //   height: 1.5rem;
+      //   margin-right: 0.5rem;
+      // }
       .title {
+        font-size: 1.5rem;
         font-weight: 700;
       }
     }
@@ -77,5 +78,13 @@
   .menuLang {
     font-family: Poppins, Arial, Helvetica, sans-serif;
     font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .headerWrapper {
+    .contentWrapper {
+      padding: 1rem;
+    }
   }
 }
