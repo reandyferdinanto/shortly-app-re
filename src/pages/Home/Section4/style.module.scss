@@ -1,0 +1,170 @@
+@import '@styles/base';
+
+.FooterWrapper {
+  width: 100%;
+  height: 100%;
+  @include directionX;
+  background-color: #000000;
+  color: #ffffff;
+  box-sizing: border-box;
+  padding: 2rem 7rem 1rem 7rem;
+  gap: 2rem;
+  .Logo {
+    width: 24rem;
+    height: 100%;
+
+    .Shortly {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+  }
+
+  .MenuWrapper {
+    @include directionX;
+    .Features {
+      width: 14rem;
+      height: 10rem;
+
+      .FeaTitle {
+        font-weight: 600;
+      }
+      .Content {
+        font-size: 0.8rem;
+        padding: 0.2rem 0;
+      }
+    }
+    .Resources {
+      width: 14rem;
+      height: 10rem;
+
+      .ResTitle {
+        font-weight: 600;
+      }
+
+      .Content {
+        font-size: 0.8rem;
+        padding: 0.2rem 0;
+      }
+    }
+    .Company {
+      width: 14rem;
+      height: 10rem;
+
+      .CompTitle {
+        font-weight: 600;
+      }
+      .Content {
+        font-size: 0.8rem;
+        padding: 0.2rem 0;
+      }
+    }
+  }
+
+  .SocialsWrapper {
+    width: 10rem;
+    @include directionX;
+    justify-content: start;
+    gap: 1rem;
+
+    .IconFacebook {
+      background-image: url(../../../static/images/icon-facebook.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .IconTwitter {
+      background-image: url(../../../static/images/icon-twitter.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .IconPinterest {
+      background-image: url(../../../static/images/icon-pinterest.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .IconInstagram {
+      background-image: url(../../../static/images/icon-instagram.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .IconFacebook:hover {
+      box-shadow: 0 0 40px #1877f2;
+      transition: background-color 0.3s;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .FooterWrapper {
+    width: 100%;
+    height: 100%;
+    @include directionY;
+    align-items: center;
+    .Logo {
+      width: 5rem;
+      height: 2rem;
+    }
+    .MenuWrapper {
+      @include directionY;
+      height: 30rem;
+      align-items: center;
+      //   .Features .Resources .Company {
+      //     @include directionY;
+      //     align-items: center;
+      //     .FeaTitle {
+      //       text-align: center;
+      //     }
+      //   }
+      .Features {
+        .FeaTitle {
+          text-align: center;
+        }
+        .FeaContent {
+          .Content {
+            text-align: center;
+          }
+        }
+      }
+
+      .Resources {
+        .ResTitle {
+          text-align: center;
+        }
+        .ResContent {
+          .Content {
+            text-align: center;
+          }
+        }
+      }
+
+      .Company {
+        .CompTitle {
+          text-align: center;
+        }
+        .CompContent {
+          .Content {
+            text-align: center;
+          }
+        }
+      }
+    }
+    .SocialsWrapper {
+      @include directionX;
+      width: 100%;
+      align-items: start;
+      justify-content: center;
+      padding-bottom: 2rem;
+    }
+  }
+}

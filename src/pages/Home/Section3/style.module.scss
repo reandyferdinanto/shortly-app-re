@@ -1,0 +1,52 @@
+@import '@styles/base';
+
+.Wrapper {
+  width: 100%;
+  height: 15rem;
+  background: url(../../../static/images/bg-boost-desktop.svg) var(--color-shorten) no-repeat;
+  background-size: cover;
+  @include directionY;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  .TitleS3 {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  .GetStarted {
+    background-color: var(--color-button-cyan);
+    border: none;
+    width: 10rem;
+    padding: 1rem 0.8rem;
+    border-radius: 2rem;
+    color: $color-white;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .GetStarted:hover {
+    background-color: hsl(180, 74%, 54%);
+  }
+  .GetStarted:active {
+    position: relative;
+    top: 1px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Wrapper {
+    background: url(../../../static/images/bg-boost-mobile.svg) var(--color-shorten) no-repeat;
+    background-size: cover;
+    .TitleS3 {
+      font-size: 1.7rem;
+    }
+    .GetStarted {
+      width: 8rem;
+      padding: 0.8rem 0.6rem;
+      font-size: 0.8rem;
+    }
+  }
+}
