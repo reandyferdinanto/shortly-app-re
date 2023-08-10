@@ -1,0 +1,31 @@
+import React from 'react';
+import { FormattedMessage } from 'react-intl';
+import classes from './style.module.scss';
+
+const Section1 = () => {
+  return (
+    <>
+      <div className={classes.Wrapper}>
+        <div className={classes.LeftContainer}>
+          <div className={classes.TextMore}>
+            <div className={classes.TextMore1}>
+              <FormattedMessage id="app_MainTitle1" />
+            </div>
+            <div className={classes.TextMore2}>
+              <FormattedMessage id="app_MainTitle2" />
+            </div>
+          </div>
+          <div className={classes.SubTitle}>
+            Build your brand's recognition and get detailed <br /> insight on how your links are performing
+          </div>
+          <button className={classes.GetStarted}>Get Started</button>
+        </div>
+        <div className={classes.RightContainer}>
+          <div className={classes.Illustration}></div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Section1;

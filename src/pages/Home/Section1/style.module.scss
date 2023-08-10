@@ -1,0 +1,104 @@
+@import '@styles/base';
+
+.Wrapper {
+  @include wrapper;
+  @include directionX;
+  box-sizing: border-box;
+
+  .LeftContainer {
+    padding: 7rem 7rem;
+    width: 55%;
+    height: auto;
+    .TextMore {
+      font-size: 5rem;
+      font-weight: 700;
+
+      .TextMore1 {
+        margin-bottom: -0.25em;
+      }
+
+      .TextMore2 {
+        margin-top: -0.35em;
+      }
+    }
+    .SubTitle {
+      color: var(--subitle-Text);
+      font-weight: 500;
+      padding-bottom: 2rem;
+    }
+
+    .GetStarted {
+      background-color: var(--color-button-cyan);
+      border: none;
+      width: 10rem;
+      padding: 1rem 0.8rem;
+      border-radius: 1rem;
+      color: $color-white;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .GetStarted:hover {
+      background-color: hsl(180, 74%, 54%);
+    }
+    .GetStarted:active {
+      position: relative;
+      top: 1px;
+    }
+  }
+  .RightContainer {
+    padding-top: 7rem;
+    padding-right: 7rem;
+    width: 45%;
+    height: auto;
+    .Illustration {
+      background-image: url('../../../static/images/illustration-working.svg');
+      background-size: cover;
+      width: 100%;
+      height: 20rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Wrapper {
+    @include directionY;
+    flex-direction: column-reverse;
+    box-sizing: border-box;
+    padding: 1rem 1rem 10rem 1rem;
+
+    .LeftContainer {
+      @include wrapper;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .TextMore {
+        font-size: 3rem;
+        text-align: center;
+      }
+      .SubTitle {
+        font-size: 0.8rem;
+        text-align: center;
+      }
+      .GetStarted {
+        width: 15rem;
+        padding: 1.2rem;
+        font-size: 1.2rem;
+        border-radius: 4rem;
+      }
+    }
+
+    .RightContainer {
+      @include wrapper;
+      padding-top: 0;
+      padding-right: 0;
+      .Illustration {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

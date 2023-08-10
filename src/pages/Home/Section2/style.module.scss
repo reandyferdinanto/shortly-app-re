@@ -1,0 +1,199 @@
+@import '@styles/base.scss';
+
+.Section2 {
+  position: relative;
+  @include wrapper;
+  background-color: var(--color-bg-S2);
+  @include directionY;
+  box-sizing: border-box;
+  padding: 8rem 7rem 3rem 7rem;
+
+  .ShorteningInputWrapper {
+    position: absolute;
+    width: 40%;
+    @include directionX;
+    height: 5rem;
+    justify-content: center;
+    align-items: center;
+    // justify-content: center;
+    // box-sizing: border-box;
+    top: -2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    // background-color: var(--color-shorten);
+  }
+
+  .AdvancedWrapper {
+    @include wrapper;
+    @include directionY;
+    background-color: var(--color-bg-S2);
+    justify-content: center;
+    align-items: center;
+
+    .Advanced {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .Track {
+      font-size: 1rem;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+
+  .DetailedWrapper {
+    width: 100%;
+    height: 30rem;
+    @include directionX;
+    justify-content: center;
+    gap: 13rem;
+    box-sizing: border-box;
+    padding: 6rem 0;
+
+    hr {
+      position: absolute;
+      width: 60%;
+      height: 0.2rem;
+      background-color: var(--color-button-cyan);
+      border: none;
+      margin-top: 8rem;
+      z-index: 0;
+    }
+
+    .DetailedBox1 {
+      width: 100%;
+      max-width: 15rem;
+      height: 12rem;
+      background-color: var(--color-detailed-box);
+      z-index: 1;
+      border-radius: 4px;
+      padding: 4rem 1.2rem 0rem 1.2rem;
+      @include directionY;
+      position: relative;
+
+      .Icon {
+        background-color: var(--color-icon);
+        background-image: url(../../../static/images/icon-brand-recognition.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 2.5rem;
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        top: -2.5rem;
+      }
+
+      .DetailedTitle {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #001a41;
+      }
+      .DetailedDesc {
+        font-size: 0.85rem;
+      }
+    }
+
+    .DetailedBox2 {
+      width: 100%; // Adjusted to '100%' for responsiveness
+      max-width: 15rem; // Limiting the max-width for larger screens
+      height: 12rem; // Adjusted to 'auto' for responsive height
+      background-color: var(--color-detailed-box);
+      z-index: 1;
+      border-radius: 4px;
+      padding: 4rem 1.2rem 0rem 1.2rem;
+      @include directionY;
+      //   justify-content: start;
+      position: relative;
+      margin-top: 3rem;
+      .Icon {
+        background-color: var(--color-icon);
+        background-image: url(../../../static/images/icon-detailed-records.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 2.5rem;
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        top: -2.5rem;
+      }
+
+      .DetailedTitle {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #001a41;
+      }
+      .DetailedDesc {
+        font-size: 0.85rem;
+      }
+    }
+
+    .DetailedBox3 {
+      width: 100%; // Adjusted to '100%' for responsiveness
+      max-width: 15rem; // Limiting the max-width for larger screens
+      height: 12rem; // Adjusted to 'auto' for responsive height
+      background-color: var(--color-detailed-box);
+      z-index: 1;
+      border-radius: 4px;
+      padding: 4rem 1.2rem 0rem 1.2rem;
+      @include directionY;
+      //   justify-content: start;
+      position: relative;
+      margin-top: 6rem;
+      .Icon {
+        background-color: var(--color-icon);
+        background-image: url(../../../static/images/icon-fully-customizable.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 2.5rem;
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        top: -2.5rem;
+      }
+
+      .DetailedTitle {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #001a41;
+      }
+      .DetailedDesc {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Section2 {
+    padding: 2rem 1rem;
+    .AdvancedWrapper {
+      padding: 8rem 0 0 0;
+      width: 100%;
+      //   margin-bottom: 3rem;
+      .Advanced {
+        text-align: center;
+      }
+      .Track {
+        width: 100%;
+        font-size: 0.8rem;
+      }
+    }
+    .DetailedWrapper {
+      flex-direction: column;
+      align-items: center;
+      height: 60rem;
+      gap: 1rem;
+
+      .DetailedBox1,
+      .DetailedBox2,
+      .DetailedBox3 {
+        margin-top: 3rem;
+        padding: 4rem 2rem 2rem 2rem;
+      }
+    }
+  }
+}

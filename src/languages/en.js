@@ -4,6 +4,6 @@ export default {
   app_not_found: 'Page not found',
   app_lang_id: 'Indonesian',
   app_lang_en: 'English',
-  app_MainTitle1: 'More than',
-  app_MainTitle2: 'just shorter link',
+  app_MainTitle1: 'More than just',
+  app_MainTitle2: 'shorter link',
 };

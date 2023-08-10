@@ -3,6 +3,12 @@
   --color-bg-2: hsl(0, 0%, 75%);
   --color-text: hsl(260, 8%, 14%);
   --color-nav-s1: hsl(0, 0%, 75%);
+  --subitle-Text: hsl(0, 0%, 35%);
+  --color-button-cyan: hsl(180, 66%, 49%);
+  --color-bg-S2: hsl(257, 7%, 63%);
+  --color-detailed-box: #efe1d1;
+  --color-icon: #331d2c;
+  --color-shorten: #331d2c;
 }
 
 @mixin dark-theme {
@@ -10,4 +16,10 @@
   --color-bg-2: #393646;
   --color-text: #f4eee0;
   --color-nav-s1: #393646;
+  --subitle-Text: #f4eee0;
+  --color-button-cyan: hsl(180, 66%, 49%);
+  --color-bg-S2: #2f2d3a;
+  --color-detailed-box: #a78295;
+  --color-icon: #886c7a;
+  --color-shorten: #886c7a;
 }
