@@ -1,7 +1,7 @@
 @import '@styles/base.scss';
 
 .Section2 {
-  position: relative;
+  // position: relative;
   @include wrapper;
   background-color: var(--color-bg-S2);
   @include directionY;
@@ -9,26 +9,26 @@
   padding: 8rem 7rem 3rem 7rem;
 
   .ShorteningInputWrapper {
-    position: absolute;
+    position: relative;
     width: 40%;
     @include directionX;
     height: 5rem;
     justify-content: center;
     align-items: center;
-    // justify-content: center;
-    // box-sizing: border-box;
-    top: -2.5rem;
+    top: -10rem;
     left: 50%;
     transform: translateX(-50%);
-    // background-color: var(--color-shorten);
+    flex-shrink: 0;
   }
 
   .AdvancedWrapper {
+    position: relative;
     @include wrapper;
     @include directionY;
     background-color: var(--color-bg-S2);
     justify-content: center;
     align-items: center;
+    margin-top: auto;
 
     .Advanced {
       font-size: 2rem;
@@ -96,15 +96,14 @@
     }
 
     .DetailedBox2 {
-      width: 100%; // Adjusted to '100%' for responsiveness
-      max-width: 15rem; // Limiting the max-width for larger screens
-      height: 12rem; // Adjusted to 'auto' for responsive height
+      width: 100%;
+      max-width: 15rem;
+      height: 12rem;
       background-color: var(--color-detailed-box);
       z-index: 1;
       border-radius: 4px;
       padding: 4rem 1.2rem 0rem 1.2rem;
       @include directionY;
-      //   justify-content: start;
       position: relative;
       margin-top: 3rem;
       .Icon {
@@ -131,15 +130,14 @@
     }
 
     .DetailedBox3 {
-      width: 100%; // Adjusted to '100%' for responsiveness
-      max-width: 15rem; // Limiting the max-width for larger screens
-      height: 12rem; // Adjusted to 'auto' for responsive height
+      width: 100%;
+      max-width: 15rem;
+      height: 12rem;
       background-color: var(--color-detailed-box);
       z-index: 1;
       border-radius: 4px;
       padding: 4rem 1.2rem 0rem 1.2rem;
       @include directionY;
-      //   justify-content: start;
       position: relative;
       margin-top: 6rem;
       .Icon {
@@ -170,10 +168,15 @@
 @media only screen and (max-width: 768px) {
   .Section2 {
     padding: 2rem 1rem;
+    .ShorteningInputWrapper {
+      top: 2rem;
+      z-index: 2;
+    }
+
     .AdvancedWrapper {
-      padding: 8rem 0 0 0;
+      padding: 2rem 0 0 0;
       width: 100%;
-      //   margin-bottom: 3rem;
+
       .Advanced {
         text-align: center;
       }

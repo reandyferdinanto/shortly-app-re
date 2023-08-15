@@ -1,6 +1,7 @@
 @import '@styles/base';
 
 .ShorteningBoxWrapper {
+  position: sticky;
   box-sizing: border-box;
   width: 82rem;
   max-width: 100%;
@@ -13,6 +14,7 @@
   justify-content: start;
   padding: 0 2rem;
   gap: 1rem;
+  margin-bottom: 0.5rem;
 
   .Input {
     width: 70rem;
@@ -38,6 +40,46 @@
   }
 }
 
+.activeBox {
+  @include directionX;
+  justify-content: center;
+  gap: 1rem;
+
+  .activeTextFieldBox {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 8px;
+    // width: 5rem;
+    max-width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .activeButtonCopy {
+    background-color: var(--color-button-cyan);
+    border: none;
+    width: 7rem;
+    box-sizing: border-box;
+    padding: 0.2rem 0rem;
+    border-radius: 0.6rem;
+    color: $color-white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+  }
+  .activeButtonCopy:hover {
+    background-color: hsl(180, 74%, 54%);
+  }
+  .activeButtonCopy:active {
+    position: relative;
+    top: 1px;
+  }
+}
+
+.errorMessage {
+  color: red;
+}
+
 @media (max-width: 768px) {
   .ShorteningBoxWrapper {
     background: url(../../static//images/bg-shorten-mobile.svg) var(--color-shorten) no-repeat;
@@ -53,6 +95,17 @@
 
     .Button {
       width: 17rem;
+    }
+  }
+
+  .activeBox {
+    margin-top: 1rem;
+    @include directionY;
+    gap: 0;
+    height: 12rem;
+    .activeButtonCopy {
+      width: 20rem;
+      padding: 1rem 0;
     }
   }
 }
