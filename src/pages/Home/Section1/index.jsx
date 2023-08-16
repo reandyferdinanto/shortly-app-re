@@ -16,9 +16,11 @@ const Section1 = () => {
             </div>
           </div>
           <div className={classes.SubTitle}>
-            Build your brand's recognition and get detailed <br /> insight on how your links are performing
+            <FormattedMessage id="app_TextBuild1" /> <br /> <FormattedMessage id="app_TextBuild2" />
           </div>
-          <button className={classes.GetStarted}>Get Started</button>
+          <button className={classes.GetStarted}>
+            <FormattedMessage id="app_GetStartedButton" />
+          </button>
         </div>
         <div className={classes.RightContainer}>
           <div className={classes.Illustration}></div>

@@ -3,6 +3,7 @@ import { Box, TextField, Button } from '@mui/material';
 import classes from './style.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { getShortUrl } from '@containers/App/actions';
+import { FormattedMessage } from 'react-intl';
 
 const ShorteningInput = () => {
   const [cooldown, setCooldown] = useState(false);
@@ -49,11 +50,6 @@ const ShorteningInput = () => {
     }));
   };
 
-  // if (apiCallCount < 3) {
-  //   dispatch(getShortUrl(inputValue));
-  //   setApiCallCount(apiCallCount + 1);
-  // }
-
   return (
     <div>
       <Box component="form" className={classes.ShorteningBoxWrapper} noValidate autoComplete="off">
@@ -63,13 +59,13 @@ const ShorteningInput = () => {
           }}
           className={classes.Input}
           id="input"
-          label="Shorten a link here ..."
+          label={<FormattedMessage id="app_LabelShorten" />}
           variant="outlined"
           onChange={handleChange}
           onKeyPress={onKeyPress}
         />
         <Button className={classes.Button} type="submit" onClick={handleSubmit} disabled={cooldown}>
-          Shorten It
+          <FormattedMessage id="app_ButtonLabelShorten" />
         </Button>
         {/* {shortUrlError && <div className={classes.error}>{handleError()}</div>} */}
       </Box>
